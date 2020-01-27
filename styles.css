@@ -1,0 +1,102 @@
+@font-face {
+    font-family: MaisonNeue-Demi;
+    src: url("fonts/MaisonNeue-Demi.otf") format("opentype");
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  float: left;
+  background-color: black;
+  height: 50px;
+  width:100%;
+  margin:auto;
+}
+.menu a {
+  text-decoration: none;
+}
+.flex-container {
+  max-width: 1000px;
+}
+.menu-item {
+  color: white;
+  font-family: MaisonNeue-Demi, sans-serif;
+  fon
+  text-decoration: none;
+  font-size: 20px;
+  padding-top: 18px;
+  padding-left: 20px;
+}
+.hero-block {
+  margin-left: auto;
+  margin-right: auto;
+  height: 580px;
+  width: auto;
+  background-image: url('maps/1a.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero-block h3 {
+  padding-top: 100px;
+  margin-top:auto;
+  margin-left: auto;
+  margin-right: auto;
+  color: grey;
+  font-family: MaisonNeue-Demi, sans-serif;
+  font-size: 40px;
+  text-align: center;
+
+}
+.hero-block p {
+  color: grey;
+  font-family: MaisonNeue-Demi, sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+.gallery-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.gallery-menu a {
+  color:black;
+  text-decoration: underline;
+  font-family: MaisonNeue-Demi, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+.gallery-items {
+  max-width:1000px;
+  margin-top: 20px;;
+  position: relative;
+}
+.gallery-items img {
+  height: 100px;
+  width: auto;
+}
+.gallery-items img:hover {
+  position: sticky;
+  height: 120px;
+  width:auto;
+  -webkit-transition: width 0.25s ease, height 0.25s ease;
+}
+.img_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height:340px;
+  padding-top: 20px;
+  margin-top: 40px;
+  background-color: lightgrey;
+}
+.img_info img {
+  height: 250px;
+}
+.info_area h3{
+  padding-right: 10%;
+  text-align: center;
+}
