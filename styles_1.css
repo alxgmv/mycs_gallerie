@@ -6,31 +6,38 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  float: left;
+  /* float: left; */
   background-color: black;
-  height: 50px;
+  min-height: 50px;
   width:100%;
-  padding-top: 10px;
-  margin:auto;
+  /* text-align: center; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.top-logo {
+  height: 60px;
+  width: auto;
+  float: left;
 }
   .menu a {
+    padding-top: 15px;
     text-decoration: none;
   }
   .menu-item {
     color: white;
     font-family: MaisonNeue-Demi, sans-serif;
     text-decoration: none;
-    font-size: 20px;
-    padding-top: 14px;
-    padding-left: 20px;
+    font-size: 25px;
+    padding-left: 40px;
   }
-.fixed-container {
+.fixed-container_1 {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
 }
 .hero-block {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   height: 580px;
@@ -57,6 +64,28 @@
     font-size: 25px;
     text-align: center;
   }
+.search_bar {
+  margin-top: 10px;
+}
+#flabel p {
+  font-family: MaisonNeue-Demi, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  width: 100%
+
+}
+#fname {
+  font-family: MaisonNeue-Demi, sans-serif;
+  font-size: 20px;
+  padding-left: 30px;
+  border: 2px solid black;
+  border-radius: 25px;
+  width: 100%;
+  height: 40px;
+}
+.gallery {
+  max-height: 450px;
+}
 .gallery-menu {
   display: flex;
   flex-direction: row;
@@ -78,8 +107,11 @@
   position: relative;
 }
   .gallery-items img {
+    padding-right: 10px;
+    padding-top: 10px;
     height: 100px;
     width: auto;
+    -webkit-transition: width 0.25s ease, height 0.25s ease;
   }
   .gallery-items img:hover {
     position: sticky;
@@ -88,28 +120,49 @@
     -webkit-transition: width 0.25s ease, height 0.25s ease;
   }
 .img_info {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  height:340px;
+  justify-content: flex-start;
+  min-height:400px;
   padding-top: 20px;
   margin-top: 40px;
   background-color: lightgrey;
 }
-.img-left-block {
+.img_info img {
+  height: 350px;
+  -webkit-transition: width 0.25s ease, height 0.25s ease;
+}
+.img_info img:hover {
+  position: static;
+  height: 550px;
+  -webkit-transition: width 0.25s ease, height 0.25s ease;
+}
+  .img-left-block {
+    margin-left: 20px;
+  }
 
-}
-  .img_info img {
-    height: 250px;
+  .img-right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
   }
-.img-right-block {
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-  .info_area h3 {
-    margin-top: 0;
-    padding-right: 20%;
-    text-align: left;
-  }
+    .info_area {
+      max-width: 600px;
+      color: grey;
+      font-family: MaisonNeue-Demi, sans-serif;
+      font-size: 18px;
+    }
+    .info_area h3 {
+      color: black;
+      font-size: 25px;
+      margin-top: 0;
+      text-align: center;
+    }
+      #info-item_1 {
+
+      }
