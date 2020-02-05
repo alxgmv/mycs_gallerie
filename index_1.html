@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Mycs_gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="styles_1.css">
-    <script src="script_1.js"></script>
+    <script src="script.js" defer></script>
+
   </head>
   <body>
     <header>
@@ -21,8 +24,22 @@
           <h3>INDIVIDUELL KONFIGURIERBAR</h3>
           <p>Designe mühelos Deine Traummöbel</p>
         </div>
+        <div class="create-item">
+          <div class="add-interior-image">
+            <button type="submit" class="new_int_img"></button>
+            <div>Add interior image</div>
+          </div>
+          <div class="add-product-image">
+            <button type="submit" class="new_prod_img"></button>
+            <div>Add product image</div>
+          </div>
+          <div class="add-video_animation">
+            <button type="submit" class="new_anim"></button>
+            <div>Add video/animation</div>
+          </div>
+        </div>
         <div class="search_bar">
-          <form>
+          <form class="search_form">
             <label id="flabel" for="fname"><p>Enter UUID, hashtag or campaign name</p></label>
             <input type="text" id="fname" name="fname">
           </form>
@@ -54,36 +71,40 @@
       </div>
       <div class="img_info">
         <div class="img-left-block">
-          <img src="maps/gal2.jpg" alt="picture">
+          <img class="img_info_img" src="maps/gal2.jpg" alt="picture">
         </div>
         <div class="img-right-block">
           <div class="info_area">
             <h3> Image information </h3>
             <div id="info-item_1">
-              <p><b>UUIDs</b></p>
-              <p>##### ##### ###### ###### ###### #######</p>
+              <p><h4>UUIDs</h4></p>
+              <p contenteditable="false" id="uuid_text">##### ##### ###### ###### ###### #######</p>
+              <i class="fas fa-pen-square" id="uuid_edit"></i>
+              <i class="far fa-save" id="uuid_save"></i>
+              <i class="far fa-trash-alt" id="uuid_delete"></i></p>
             </div>
             <div id="info-item_2">
-              <p><b>Campaign</b></p>
-              <p>Black Friday</p>
+              <p><h4>Campaign</h4></i></p>
+              <p contenteditable="false" id="camp_text">Black Friday</p>
+              <i class="fas fa-pen-square" id="camp_edit"></i>
+              <i class="far fa-save" id="camp_save"></i>
+              <i class="far fa-trash-alt" id="camp_delete"></i>
             </div>
             <div id="info-item_3">
-              <p><b>Description</b></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-                Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-                Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-                Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
+              <p><h4>Description</h4></p>
+              <p contenteditable="false" id="desc_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+                <i class="fas fa-pen-square" id="desc_edit"></i>
+                <i class="far fa-save" id="desc_save"></i>
+                <i class="far fa-trash-alt" id="desc_delete"></i>
             </div>
           </div>
         </div>
       </div>
-      <div class="fixed-container_3">
-        <div class="img_actions">
-          <a href="" class="action-item"> Download </a>
-          <a href="" class="action-item"> Fillscreen </a>
-          <a href="" class="action-item"> Edit </a>
-          <a href="" class="action-item"> Delete </a>
-        </div>
+      <div class="img_actions">
+        <a href="" class="action-item"> Download </a>
+        <a href="" class="action-item"> Fillscreen </a>
+        <a href="" class="action-item"> Delete </a>
       </div>
     </main>
   </body>
