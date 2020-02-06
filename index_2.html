@@ -7,15 +7,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="styles_1.css">
     <link rel="stylesheet" href="style_popup.css">
-
-    <!-- <script src="script.js" defer></script> -->
+    <script src="script_popup.js" defer></script>
   </head>
   <body>
     <main>
       <div class="int_image_pop-up">
         <div class="add-interior-image">
-          <button type="submit" class="new_int_img"></button>
-          <div>Add interior image</div>
+          <button type="submit" class="new_int_img" id="drop_area"
+          ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+          <h5></h5></button>
+          <a id="int-link" href="#">Browse interior image</a>
+          <form class="int-img-submit" action="index.html" method="post">
+            <label for="int-UUID"><p>UUID</p></label>
+            <input type="text" name="int-UUID" value="" id="int-img-UUID">
+            <label for="int-campaign"><p>Campaign</p></label>
+            <input type="text" name="int-campaign" value="" id="int-img-campaign">
+            <label for="int-description"><p>Description</p></label>
+            <textarea name="int-description" rows="8" cols="80" value="" id="int-img-description"></textarea>
+            <!-- <input type="textarea" name="int-description" value="" id="int-img-description"> -->
+          </form>
         </div>
       </div>
     </main>

@@ -87,13 +87,21 @@
       background-image: url('maps/image-regular.svg');
       background-repeat: no-repeat;
       background-position: center;
-      opacity: 0.5;
+      opacity: 0.3;
+      -webkit-transition: opacity 0.35s ease;
       background-size: 150px;
       background-color: lightgrey;
       border: none;
       border-radius: 25px;
       margin-bottom: 20px;
       margin-top: 20px;
+    }
+    .new_int_img:hover {
+      opacity: 0.8;
+      -webkit-transition: opacity 0.35s ease;
+    }
+    .new_int_img h5 {
+      padding-bottom: 600px;
     }
   .add-product-image {
     display: flex;
@@ -107,13 +115,18 @@
       background-image: url('maps/cube-solid.svg');
       background-repeat: no-repeat;
       background-position: center;
-      opacity: 0.5;
+      opacity: 0.5;opacity: 0.3;
+      -webkit-transition: opacity 0.35s ease;
       background-size: 150px;
       background-color: lightgrey;
       border: none;
       border-radius: 25px;
       margin-bottom: 20px;
       margin-top: 20px;
+    }
+    .new_prod_img:hover {
+      opacity: 0.8;
+      -webkit-transition: opacity 0.35s ease;
     }
     .add-video_animation {
       display: flex;
@@ -127,13 +140,18 @@
         background-image: url('maps/video-solid.svg');
         background-repeat: no-repeat;
         background-position: center;
-        opacity: 0.5;
+        opacity: 0.3;
+        -webkit-transition: opacity 0.35s ease;
         background-size: 150px;
         background-color: lightgrey;
         border: none;
         border-radius: 25px;
         margin-bottom: 20px;
         margin-top: 20px;
+      }
+      .new_anim:hover {
+        opacity: 0.8;
+        -webkit-transition: opacity 0.35s ease;
       }
 .search_form {
   margin-top: 50px;

@@ -13,75 +13,115 @@ bigImage.addEventListener('mouseleave', function() {
 
 // edit UUID
 
-let uuid_edit = document.querySelector('#uuid_edit');
-let uuid_text = document.querySelector('#uuid_text');
-uuid_edit.addEventListener('click', function() {
-  uuid_text.setAttribute('contenteditable', true);
-  uuid_text.style.backgroundColor = 'white';
+let uuidEdit = document.querySelector('#uuid_edit');
+let uuidText = document.querySelector('#uuid_text');
+uuidEdit.addEventListener('click', function() {
+  uuidText.setAttribute('contenteditable', true);
+  uuidText.style.backgroundColor = 'white';
 });
 
-let uuid_save = document.querySelector('#uuid_save');
-uuid_save.addEventListener('click', function() {
-  uuid_text.setAttribute('contenteditable', false);
-  localStorage.setItem('uuid_text', uuid_text.innerHTML);
-  uuid_text.style.backgroundColor = 'lightgrey';
+let uuidSave = document.querySelector('#uuid_save');
+uuidSave.addEventListener('click', function() {
+  uuidText.setAttribute('contenteditable', false);
+  localStorage.setItem('uuid_text', uuidText.innerHTML);
+  uuidText.style.backgroundColor = 'lightgrey';
 });
 
-let uuid_delete = document.querySelector('#uuid_delete');
-uuid_delete.addEventListener('click', function() {
-  uuid_text.setAttribute('contenteditable', false);
-  uuid_text.textContent = '';
-  uuid_text.style.backgroundColor = 'lightgrey';
+let uuidDelete = document.querySelector('#uuid_delete');
+uuidDelete.addEventListener('click', function() {
+  uuidText.setAttribute('contenteditable', false);
+  uuidText.textContent = '';
+  uuidText.style.backgroundColor = 'lightgrey';
 });
 
 //edit campaign
 
-let camp_edit = document.querySelector('#camp_edit');
-let camp_text = document.querySelector('#camp_text');
-camp_edit.addEventListener('click', function() {
-  camp_text.setAttribute('contenteditable', true);
-  camp_text.style.backgroundColor = 'white';
+let campEdit = document.querySelector('#camp_edit');
+let campText = document.querySelector('#camp_text');
+campEdit.addEventListener('click', function() {
+  campText.setAttribute('contenteditable', true);
+  campText.style.backgroundColor = 'white';
 });
 
-let camp_save = document.querySelector('#camp_save');
-camp_save.addEventListener('click', function() {
-  camp_text.setAttribute('contenteditable', false);
-  localStorage.setItem('camp_text', camp_text.innerHTML);
-  camp_text.style.backgroundColor = 'lightgrey';
+let campSave = document.querySelector('#camp_save');
+campSave.addEventListener('click', function() {
+  campText.setAttribute('contenteditable', false);
+  localStorage.setItem('camp_text', campText.innerHTML);
+  campText.style.backgroundColor = 'lightgrey';
 });
 
-let camp_delete = document.querySelector('#camp_delete');
-camp_delete.addEventListener('click', function() {
-  camp_text.setAttribute('contenteditable', false);
-  camp_text.textContent = '';
-  camp_text.style.backgroundColor = 'lightgrey';
+let campDelete = document.querySelector('#camp_delete');
+campDelete.addEventListener('click', function() {
+  campText.setAttribute('contenteditable', false);
+  campText.textContent = '';
+  campText.style.backgroundColor = 'lightgrey';
 });
 
 //edit description
 
-let desc_edit = document.querySelector('#desc_edit');
-let desc_text = document.querySelector('#desc_text');
-desc_edit.addEventListener('click', function() {
-  desc_text.setAttribute('contenteditable', true);
-  desc_text.style.backgroundColor = 'white';
+let descEdit = document.querySelector('#desc_edit');
+let descText = document.querySelector('#desc_text');
+descEdit.addEventListener('click', function() {
+  descText.setAttribute('contenteditable', true);
+  descText.style.backgroundColor = 'white';
 });
 
-let desc_save = document.querySelector('#desc_save');
-desc_save.addEventListener('click', function() {
-  desc_text.setAttribute('contenteditable', false);
-  localStorage.setItem('desc_text', desc_text.innerHTML);
-  desc_text.style.backgroundColor = 'lightgrey';
+let descSave = document.querySelector('#desc_save');
+descSave.addEventListener('click', function() {
+  descText.setAttribute('contenteditable', false);
+  localStorage.setItem('desc_text', descText.innerHTML);
+  descText.style.backgroundColor = 'lightgrey';
 });
 
-let desc_delete = document.querySelector('#desc_delete');
-desc_delete.addEventListener('click', function() {
-  desc_text.setAttribute('contenteditable', false);
-  desc_text.textContent = '';
-  desc_text.style.backgroundColor = 'lightgrey';
+let descDelete = document.querySelector('#desc_delete');
+descDelete.addEventListener('click', function() {
+  descText.setAttribute('contenteditable', false);
+  descText.textContent = '';
+  descText.style.backgroundColor = 'lightgrey';
 });
+
+ // add interior Image
 
 let intImgPopup = document.querySelector('.new_int_img');
-
 intImgPopup.addEventListener('click', function() {
-  window.open('index_2.html','','width=520,height=550,left=500,top=100');
+  window.open('index_2.html','','width=520,height=850,left=500,top=0');
 })
+
+// add product Image
+
+
+let prodImgPopup = document.querySelector('.new_prod_img');
+prodImgPopup.addEventListener('click', function() {
+  window.open('index_3.html','','width=520,height=550,left=500,top=100');
+})
+
+// add video/animation
+
+
+let animVidPopup = document.querySelector('.new_anim');
+animVidPopup.addEventListener('click', function() {
+  window.open('index_4.html','','width=520,height=550,left=500,top=100');
+})
+
+// drag and drop_area
+
+function dropHandler(ev) {
+  console.log('File(s) dropped');
+  ev.preventDefault();
+  if (ev.dataTransfer.items) {
+    for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+      if (ev.dataTransfer.items[i].kind === 'file') {
+        var file = ev.dataTransfer.items[i].getAsFile();
+        console.log('... file[' + i + '].name = ' + file.name);
+      }
+    }
+  } else {
+    for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+      console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
+    }
+  }
+}
+function dragOverHandler(ev) {
+  console.log('File(s) in drop zone');
+  ev.preventDefault();
+}
