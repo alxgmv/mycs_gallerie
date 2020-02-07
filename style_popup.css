@@ -1,3 +1,6 @@
+body {
+  position: staic;
+}
 .int_image_pop-up {
   width: 500px;
   height: 900px;
@@ -54,4 +57,7 @@
 }
 #drop_area h5 {
   padding-bottom: 20px;
+}
+.int-buttons {
+  
 }

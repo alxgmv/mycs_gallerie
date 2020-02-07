@@ -82,13 +82,33 @@ descDelete.addEventListener('click', function() {
 
  // add interior Image
 
-let intImgPopup = document.querySelector('.new_int_img');
-intImgPopup.addEventListener('click', function() {
-  window.open('index_2.html','','width=520,height=850,left=500,top=0');
-})
+(function add_interior_image() {
+  let intImgClick = document.querySelector('.new_int_img');
+  intImgClick.addEventListener('click', function() {
+    interiorImageUpload();
+  });
+})();
+let intImgWindow;
+let mainPage = document.querySelector('body');
+function interiorImageUpload() {
+  intImgWindow = window.open('index_intImage.html','','width=520,height=850,left=500,top=0');
+};
+function mainDisable() {
+  if (intImgWindow && !intImgWindow.closed) {
+    intImgWindow.focus();
+    mainPage.addEventListener('click', function() {
+      intImgWindow.focus();
+    });
+    mainPage.classList.add('cover');
+  } else if (intImgWindow.closed) {
+    mainPage.classList.remove('cover');
 
+  };
+};
+function mainEnable () {
+  
+}
 // add product Image
-
 
 let prodImgPopup = document.querySelector('.new_prod_img');
 prodImgPopup.addEventListener('click', function() {
@@ -102,26 +122,3 @@ let animVidPopup = document.querySelector('.new_anim');
 animVidPopup.addEventListener('click', function() {
   window.open('index_4.html','','width=520,height=550,left=500,top=100');
 })
-
-// drag and drop_area
-
-function dropHandler(ev) {
-  console.log('File(s) dropped');
-  ev.preventDefault();
-  if (ev.dataTransfer.items) {
-    for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-      if (ev.dataTransfer.items[i].kind === 'file') {
-        var file = ev.dataTransfer.items[i].getAsFile();
-        console.log('... file[' + i + '].name = ' + file.name);
-      }
-    }
-  } else {
-    for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-      console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
-    }
-  }
-}
-function dragOverHandler(ev) {
-  console.log('File(s) in drop zone');
-  ev.preventDefault();
-}

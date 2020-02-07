@@ -2,6 +2,16 @@
     font-family: MaisonNeue-Demi;
     src: url("fonts/MaisonNeue-Demi.otf") format("opentype");
 }
+.cover {
+  position: fixed;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height:100%;
+  background-color: black;
+  opacity:0.5;
+}
 .menu {
   display: flex;
   flex-direction: row;
