@@ -15,99 +15,187 @@ bigImage.addEventListener('mouseleave', function() {
 
 let uuidEdit = document.querySelector('#uuid_edit');
 let uuidText = document.querySelector('#uuid_text');
+let uuidSave = document.querySelector('#uuid_save');
+let uuidDelete = document.querySelector('#uuid_delete');
+let uuidCancel = document.querySelector('#uuid_cancel');
+uuidSave.style.visibility = 'hidden';
+uuidDelete.style.visibility = 'hidden';
+uuidCancel.style.visibility = 'hidden';
+
 uuidEdit.addEventListener('click', function() {
   uuidText.setAttribute('contenteditable', true);
   uuidText.style.backgroundColor = 'white';
+  uuidEdit.style.visibility = 'hidden';
+  uuidSave.style.visibility = 'visible';
+  uuidDelete.style.visibility = 'visible';
+  uuidCancel.style.visibility = 'visible';
 });
 
-let uuidSave = document.querySelector('#uuid_save');
 uuidSave.addEventListener('click', function() {
   uuidText.setAttribute('contenteditable', false);
   localStorage.setItem('uuid_text', uuidText.innerHTML);
   uuidText.style.backgroundColor = 'lightgrey';
+  uuidEdit.style.visibility = 'visible';
+  uuidSave.style.visibility = 'hidden';
+  uuidDelete.style.visibility = 'hidden';
+  uuidCancel.style.visibility = 'hidden';
 });
 
-let uuidDelete = document.querySelector('#uuid_delete');
 uuidDelete.addEventListener('click', function() {
-  uuidText.setAttribute('contenteditable', false);
   uuidText.textContent = '';
-  uuidText.style.backgroundColor = 'lightgrey';
 });
+
+uuidCancel.addEventListener('click', function() {
+  uuidText.setAttribute('contenteditable', false);
+  uuidText.textContent = localStorage.uuid_text;
+  uuidText.style.backgroundColor = 'lightgrey';
+  uuidEdit.style.visibility = 'visible';
+  uuidSave.style.visibility = 'hidden';
+  uuidDelete.style.visibility = 'hidden';
+  uuidCancel.style.visibility = 'hidden';
+});
+window.onload = function() {
+  let x = localStorage.uuid_text;
+  if (x && x!==null) {
+    uuidText.textContent = x;
+  }
+}
 
 //edit campaign
 
 let campEdit = document.querySelector('#camp_edit');
 let campText = document.querySelector('#camp_text');
+let campSave = document.querySelector('#camp_save');
+let campDelete = document.querySelector('#camp_delete');
+let campCancel = document.querySelector('#camp_cancel');
+campSave.style.visibility = 'hidden';
+campDelete.style.visibility = 'hidden';
+campCancel.style.visibility = 'hidden';
+
 campEdit.addEventListener('click', function() {
   campText.setAttribute('contenteditable', true);
   campText.style.backgroundColor = 'white';
+  campEdit.style.visibility = 'hidden';
+  campSave.style.visibility = 'visible';
+  campDelete.style.visibility = 'visible';
+  campCancel.style.visibility = 'visible';
 });
 
-let campSave = document.querySelector('#camp_save');
 campSave.addEventListener('click', function() {
   campText.setAttribute('contenteditable', false);
   localStorage.setItem('camp_text', campText.innerHTML);
   campText.style.backgroundColor = 'lightgrey';
+  campEdit.style.visibility = 'visible';
+  campSave.style.visibility = 'hidden';
+  campDelete.style.visibility = 'hidden';
+  campCancel.style.visibility = 'hidden';
 });
 
-let campDelete = document.querySelector('#camp_delete');
 campDelete.addEventListener('click', function() {
-  campText.setAttribute('contenteditable', false);
   campText.textContent = '';
-  campText.style.backgroundColor = 'lightgrey';
 });
+
+campCancel.addEventListener('click', function() {
+  campText.setAttribute('contenteditable', false);
+  campText.textContent = localStorage.camp_text;
+  campText.style.backgroundColor = 'lightgrey';
+  campEdit.style.visibility = 'visible';
+  campSave.style.visibility = 'hidden';
+  campDelete.style.visibility = 'hidden';
+  campCancel.style.visibility = 'hidden';
+});
+window.onload = function() {
+  let x = localStorage.camp_text;
+  if (x && x!==null) {
+    campText.textContent = x;
+  }
+}
 
 //edit description
 
 let descEdit = document.querySelector('#desc_edit');
 let descText = document.querySelector('#desc_text');
+let descSave = document.querySelector('#desc_save');
+let descDelete = document.querySelector('#desc_delete');
+let descCancel = document.querySelector('#desc_cancel');
+descSave.style.visibility = 'hidden';
+descDelete.style.visibility = 'hidden';
+descCancel.style.visibility = 'hidden';
+
 descEdit.addEventListener('click', function() {
   descText.setAttribute('contenteditable', true);
   descText.style.backgroundColor = 'white';
+  descEdit.style.visibility = 'hidden';
+  descSave.style.visibility = 'visible';
+  descDelete.style.visibility = 'visible';
+  descCancel.style.visibility = 'visible';
 });
 
-let descSave = document.querySelector('#desc_save');
 descSave.addEventListener('click', function() {
   descText.setAttribute('contenteditable', false);
   localStorage.setItem('desc_text', descText.innerHTML);
   descText.style.backgroundColor = 'lightgrey';
+  descEdit.style.visibility = 'visible';
+  descSave.style.visibility = 'hidden';
+  descDelete.style.visibility = 'hidden';
+  descCancel.style.visibility = 'hidden';
 });
 
-let descDelete = document.querySelector('#desc_delete');
 descDelete.addEventListener('click', function() {
-  descText.setAttribute('contenteditable', false);
   descText.textContent = '';
-  descText.style.backgroundColor = 'lightgrey';
 });
+
+descCancel.addEventListener('click', function() {
+  descText.setAttribute('contenteditable', false);
+  descText.textContent = localStorage.desc_text;
+  descText.style.backgroundColor = 'lightgrey';
+  descEdit.style.visibility = 'visible';
+  descSave.style.visibility = 'hidden';
+  descDelete.style.visibility = 'hidden';
+  descCancel.style.visibility = 'hidden';
+});
+window.onload = function() {
+  let x = localStorage.desc_text;
+  if (x && x!==null) {
+    descText.textContent = x;
+  }
+}
 
  // add interior Image
 
-(function add_interior_image() {
-  let intImgClick = document.querySelector('.new_int_img');
-  intImgClick.addEventListener('click', function() {
-    interiorImageUpload();
-  });
-})();
-let intImgWindow;
+let intImgClick = document.querySelector('.new_int_img');
 let mainPage = document.querySelector('body');
+let intImgWindow = null;
+
+intImgClick.addEventListener('click', function() {
+  interiorImageUpload();
+});
+mainPage.addEventListener('click', function() {
+  mainDisable();
+});
+
 function interiorImageUpload() {
   intImgWindow = window.open('index_intImage.html','','width=520,height=850,left=500,top=0');
-};
+  intImgWindow.focus();
+}
+
 function mainDisable() {
   if (intImgWindow && !intImgWindow.closed) {
+    mainPage.classList.add('cover');
     intImgWindow.focus();
     mainPage.addEventListener('click', function() {
       intImgWindow.focus();
     });
-    mainPage.classList.add('cover');
-  } else if (intImgWindow.closed) {
-    mainPage.classList.remove('cover');
-
-  };
-};
-function mainEnable () {
-  
+  } else {
+    mainEnable;
+  }
 }
+
+function mainEnable() {
+  mainPage.focus();
+  mainPage.classList.remove('cover');
+}
+
 // add product Image
 
 let prodImgPopup = document.querySelector('.new_prod_img');

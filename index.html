@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="styles_main.css">
     <script src="script.js" defer></script>
+    <script src="script_popup.js" defer></script>
+
 
   </head>
-  <body onFocus="mainDisable();" onclick="mainDisable();">
+  <body>
     <header>
       <menu class="menu">
         <img src="maps/Logo.png" class="top-logo" alt='logo'>
@@ -78,16 +80,18 @@
             <h3> Image information </h3>
             <div id="info-item_1">
               <p><h4>UUIDs</h4></p>
-              <p contenteditable="false" id="uuid_text">##### ##### ###### ###### ###### #######</p>
-              <i class="fas fa-pen-square" id="uuid_edit"></i>
+              <p contenteditable="false" id="uuid_text">UUID1 UUID2 UUID3 UUID4 UUID5</p>
+              <i class="fas fa-pen-square w3-xlarge" id="uuid_edit"></i>
               <i class="far fa-save" id="uuid_save"></i>
-              <i class="far fa-trash-alt" id="uuid_delete"></i></p>
+              <i class="fas fa-times" id="uuid_cancel"></i>
+              <i class="far fa-trash-alt" id="uuid_delete"></i>
             </div>
             <div id="info-item_2">
               <p><h4>Campaign</h4></i></p>
               <p contenteditable="false" id="camp_text">Black Friday</p>
               <i class="fas fa-pen-square" id="camp_edit"></i>
               <i class="far fa-save" id="camp_save"></i>
+              <i class="fas fa-times" id="camp_cancel"></i>
               <i class="far fa-trash-alt" id="camp_delete"></i>
             </div>
             <div id="info-item_3">
@@ -96,6 +100,7 @@
                 Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
                 <i class="fas fa-pen-square" id="desc_edit"></i>
                 <i class="far fa-save" id="desc_save"></i>
+                <i class="fas fa-times" id="desc_cancel"></i>
                 <i class="far fa-trash-alt" id="desc_delete"></i>
             </div>
           </div>
