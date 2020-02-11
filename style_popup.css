@@ -1,23 +1,23 @@
 .int_image_pop-up {
+  position: fixed;
+  left: 38%;
   overflow: hidden;
-  /* position: fixed; */
   display: none;
-  /* left: 0;
-  right: 0; */
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
   min-height: 1000px;
-  background-color: white;
-  z-index: 3;
+  background-color: lightgrey;
+  z-index: 1;
 }
 
 #drop_area {
+  width: 100%;
   max-height: 250px;
   background-image: url('maps/image-regular.svg');
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.3;
+  opacity: 0.5;
   -webkit-transition: opacity 0.35s ease;
   background-size: 150px;
   background-color: lightgrey;
@@ -27,6 +27,10 @@
   margin-top: 20px;
   padding-top: 180px;
   text-align: center;
+}
+
+#drop_area:hover {
+  opacity: 0.2;
 }
 
 #int-img-UUID {
@@ -75,8 +79,7 @@
 }
 
 .int-img-submit {
-  /* padding-left: 20px; */
-  /* text-align: left; */
+  text-align: center;
   font-family: MaisonNeue-Demi, sans-serif;
   font-size: 16px;
 }
