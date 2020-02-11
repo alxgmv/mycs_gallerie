@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Mycs_gallery</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="styles_main.css">
-    <script src="script.js" defer></script>
-    <script src="script_popup.js" defer></script>
+
+<head>
+  <meta charset="utf-8">
+  <title>Mycs_gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="style_popup.css">
+  <link rel="stylesheet" href="styles_main.css">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="script.js" defer></script>
+  <script src="script_popup.js" defer></script>
 
 
-  </head>
-  <body>
+</head>
+
+<body>
+  <div class="int_image_pop-up">
+    <div class="add-interior-image">
+      <button type="submit" id="drop_area">
+        <h5><a id="int-link" href="#">Browse interior image</a></h5>
+      </button>
+
+      <form class="int-img-submit" action="index.html" method="post">
+        <label for="int-UUID">
+          <p>UUID</p>
+        </label>
+        <input type="text" name="int-UUID" value="" id="int-img-UUID">
+        <label for="int-campaign">
+          <p>Campaign</p>
+        </label>
+        <input type="text" name="int-campaign" value="" id="int-img-campaign">
+        <label for="int-campaign">
+          <p>Colors/Materials</p>
+        </label>
+        <input type="text" name="int-campaign" value="" id="int-img-materials">
+        <label for="int-description">
+          <p>Description</p>
+        </label>
+        <textarea name="int-description" rows="8" cols="80" value="" id="int-img-description"></textarea>
+        <div>
+          <button type="button" name="upload-btn" class="int-buttons" id="upload-btn">Upload</button>
+          <button type="button" name="cancel-btn" class="int-buttons" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <main class="main_page">
     <header>
       <menu class="menu">
         <img src="maps/Logo.png" class="top-logo" alt='logo'>
@@ -20,97 +55,105 @@
         <a href="" class="menu-item"> Look&Feel </a>
         <a href="" class="menu-item"> Magazyne </a>
     </header>
-    <main>
-      <div class="fixed-container_1">
-        <div class="hero-block">
-          <h3>INDIVIDUELL KONFIGURIERBAR</h3>
-          <p>Designe mühelos Deine Traummöbel</p>
+    <div class="fixed-container_1">
+      <div class="hero-block">
+        <h3>INDIVIDUELL KONFIGURIERBAR</h3>
+        <p>Designe mühelos Deine Traummöbel</p>
+      </div>
+      <div class="create-item">
+        <div class="add-interior-image">
+          <button type="submit" class="new_int_img"></button>
+          <div>Add interior image</div>
         </div>
-        <div class="create-item">
-          <div class="add-interior-image">
-            <button type="submit" class="new_int_img"></button>
-            <div>Add interior image</div>
-          </div>
-          <div class="add-product-image">
-            <button type="submit" class="new_prod_img"></button>
-            <div>Add product image</div>
-          </div>
-          <div class="add-video_animation">
-            <button type="submit" class="new_anim"></button>
-            <div>Add video/animation</div>
-          </div>
+        <div class="add-product-image">
+          <button type="submit" class="new_prod_img"></button>
+          <div>Add product image</div>
         </div>
-        <div class="search_bar">
-          <form class="search_form">
-            <label id="flabel" for="fname"><p>Enter UUID, hashtag or campaign name</p></label>
-            <input type="text" id="fname" name="fname">
-          </form>
+        <div class="add-video_animation">
+          <button type="submit" class="new_anim"></button>
+          <div>Add video/animation</div>
         </div>
-        <div class="gallery">
-          <div class="gallery-menu">
-            <a href="" class="menu-item"> Products </a>
-            <a href="" class="menu-item"> Interiors </a>
-            <a href="" class="menu-item"> Look&Feel </a>
-            <a href="" class="menu-item"> Magazyne </a>
-          </div>
-          <div class="fixed-container_2">
-            <div class="gallery-items">
-              <img src="maps/gal1.jpg" alt="picture">
-              <img src="maps/gal2.jpg" alt="picture">
-              <img src="maps/gal3.jpg" alt="picture">
-              <img src="maps/gal4.jpg" alt="picture">
-              <img src="maps/gal5.jpg" alt="picture">
-              <img src="maps/gal6.jpg" alt="picture">
-              <img src="maps/gal7.jpg" alt="picture">
-              <img src="maps/gal8.jpg" alt="picture">
-              <img src="maps/gal9.jpg" alt="picture">
-              <img src="maps/gal10.jpg" alt="picture">
-              <img src="maps/gal11.jpg" alt="picture">
-              <img src="maps/gal12.jpg" alt="picture">
-            </div>
+      </div>
+      <div class="search_bar">
+        <form class="search_form">
+          <label id="flabel" for="fname">
+            <p>Enter UUID, hashtag or campaign name</p>
+          </label>
+          <input type="text" id="fname" name="fname">
+        </form>
+      </div>
+      <div class="gallery">
+        <div class="gallery-menu">
+          <a href="" class="menu-item"> Products </a>
+          <a href="" class="menu-item"> Interiors </a>
+          <a href="" class="menu-item"> Look&Feel </a>
+          <a href="" class="menu-item"> Magazyne </a>
+        </div>
+        <div class="fixed-container_2">
+          <div class="gallery-items">
+            <img src="maps/gal1.jpg" alt="picture">
+            <img src="maps/gal2.jpg" alt="picture">
+            <img src="maps/gal3.jpg" alt="picture">
+            <img src="maps/gal4.jpg" alt="picture">
+            <img src="maps/gal5.jpg" alt="picture">
+            <img src="maps/gal6.jpg" alt="picture">
+            <img src="maps/gal7.jpg" alt="picture">
+            <img src="maps/gal8.jpg" alt="picture">
+            <img src="maps/gal9.jpg" alt="picture">
+            <img src="maps/gal10.jpg" alt="picture">
+            <img src="maps/gal11.jpg" alt="picture">
+            <img src="maps/gal12.jpg" alt="picture">
           </div>
         </div>
       </div>
-      <div class="img_info">
-        <div class="img-left-block">
-          <img class="img_info_img" src="maps/gal2.jpg" alt="picture">
-        </div>
-        <div class="img-right-block">
-          <div class="info_area">
-            <h3> Image information </h3>
-            <div id="info-item_1">
-              <p><h4>UUIDs</h4></p>
-              <p contenteditable="false" id="uuid_text">UUID1 UUID2 UUID3 UUID4 UUID5</p>
-              <i class="fas fa-pen-square w3-xlarge" id="uuid_edit"></i>
-              <i class="far fa-save" id="uuid_save"></i>
-              <i class="fas fa-times" id="uuid_cancel"></i>
-              <i class="far fa-trash-alt" id="uuid_delete"></i>
-            </div>
-            <div id="info-item_2">
-              <p><h4>Campaign</h4></i></p>
-              <p contenteditable="false" id="camp_text">Black Friday</p>
-              <i class="fas fa-pen-square" id="camp_edit"></i>
-              <i class="far fa-save" id="camp_save"></i>
-              <i class="fas fa-times" id="camp_cancel"></i>
-              <i class="far fa-trash-alt" id="camp_delete"></i>
-            </div>
-            <div id="info-item_3">
-              <p><h4>Description</h4></p>
-              <p contenteditable="false" id="desc_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-                Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
-                <i class="fas fa-pen-square" id="desc_edit"></i>
-                <i class="far fa-save" id="desc_save"></i>
-                <i class="fas fa-times" id="desc_cancel"></i>
-                <i class="far fa-trash-alt" id="desc_delete"></i>
-            </div>
+    </div>
+    <div class="img_info">
+      <div class="img-left-block">
+        <img class="img_info_img" src="maps/gal2.jpg" alt="picture">
+      </div>
+      <div class="img-right-block">
+        <div class="info_area">
+          <h3> Image information </h3>
+          <div id="info-item_1">
+            <p>
+              <h4>UUIDs</h4>
+            </p>
+            <p contenteditable="false" id="uuid_text">UUID1 UUID2 UUID3 UUID4 UUID5</p>
+            <i class="fas fa-pen-square w3-xlarge" id="uuid_edit"></i>
+            <i class="far fa-save" id="uuid_save"></i>
+            <i class="fas fa-times" id="uuid_cancel"></i>
+            <i class="far fa-trash-alt" id="uuid_delete"></i>
+          </div>
+          <div id="info-item_2">
+            <p>
+              <h4>Campaign</h4></i>
+            </p>
+            <p contenteditable="false" id="camp_text">Black Friday</p>
+            <i class="fas fa-pen-square" id="camp_edit"></i>
+            <i class="far fa-save" id="camp_save"></i>
+            <i class="fas fa-times" id="camp_cancel"></i>
+            <i class="far fa-trash-alt" id="camp_delete"></i>
+          </div>
+          <div id="info-item_3">
+            <p>
+              <h4>Description</h4>
+            </p>
+            <p contenteditable="false" id="desc_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+              Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+            <i class="fas fa-pen-square" id="desc_edit"></i>
+            <i class="far fa-save" id="desc_save"></i>
+            <i class="fas fa-times" id="desc_cancel"></i>
+            <i class="far fa-trash-alt" id="desc_delete"></i>
           </div>
         </div>
       </div>
-      <div class="img_actions">
-        <a href="" class="action-item"> Download </a>
-        <a href="" class="action-item"> Fillscreen </a>
-        <a href="" class="action-item"> Delete </a>
-      </div>
-    </main>
-  </body>
+    </div>
+    <div class="img_actions">
+      <a href="" class="action-item"> Download </a>
+      <a href="" class="action-item"> Fillscreen </a>
+      <a href="" class="action-item"> Delete </a>
+    </div>
+  </main>
+</body>
+
 </html>

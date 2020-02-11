@@ -164,49 +164,36 @@ window.onload = function() {
  // add interior Image
 
 let intImgClick = document.querySelector('.new_int_img');
-let mainPage = document.querySelector('body');
-let intImgWindow = null;
+let mainPage = document.querySelector('.main_page');
+let intImgWindow = document.querySelector('.int_image_pop-up');
+let uploadBtn = document.querySelector('#upload-btn');
+let cancelBtn = document.querySelector('#cancel-btn');
 
 intImgClick.addEventListener('click', function() {
-  interiorImageUpload();
-});
-mainPage.addEventListener('click', function() {
-  mainDisable();
+  intImgWindow.style.display = 'block';
+  mainPage.classList.toggle('cover');
 });
 
-function interiorImageUpload() {
-  intImgWindow = window.open('index_intImage.html','','width=520,height=850,left=500,top=0');
-  intImgWindow.focus();
-}
-
-function mainDisable() {
-  if (intImgWindow && !intImgWindow.closed) {
-    mainPage.classList.add('cover');
-    intImgWindow.focus();
-    mainPage.addEventListener('click', function() {
-      intImgWindow.focus();
-    });
-  } else {
-    mainEnable;
-  }
-}
-
-function mainEnable() {
-  mainPage.focus();
-  mainPage.classList.remove('cover');
-}
+uploadBtn.addEventListener('click', function() {
+  intImgWindow.style.display = 'none';
+  mainPage.classList.toggle('cover');
+});
+cancelBtn.addEventListener('click', function() {
+  intImgWindow.style.display = 'none';
+  mainPage.classList.toggle('cover');
+})
 
 // add product Image
 
-let prodImgPopup = document.querySelector('.new_prod_img');
-prodImgPopup.addEventListener('click', function() {
-  window.open('index_3.html','','width=520,height=550,left=500,top=100');
-})
+// let prodImgPopup = document.querySelector('.new_prod_img');
+// prodImgPopup.addEventListener('click', function() {
+//   window.open('index_3.html','','width=520,height=550,left=500,top=100');
+// })
 
 // add video/animation
 
 
-let animVidPopup = document.querySelector('.new_anim');
-animVidPopup.addEventListener('click', function() {
-  window.open('index_4.html','','width=520,height=550,left=500,top=100');
-})
+// let animVidPopup = document.querySelector('.new_anim');
+// animVidPopup.addEventListener('click', function() {
+//   window.open('index_4.html','','width=520,height=550,left=500,top=100');
+// })
