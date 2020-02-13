@@ -166,8 +166,8 @@ window.onload = function() {
 let intImgClick = document.querySelector('.new_int_img');
 let mainPage = document.querySelector('.main_page');
 let intImgWindow = document.querySelector('.int_image_pop-up');
-let uploadBtn = document.querySelector('#upload-btn');
-let cancelBtn = document.querySelector('#cancel-btn');
+let uploadBtn = document.querySelector('#int-upload-btn');
+let cancelBtn = document.querySelector('#int-cancel-btn');
 
 intImgClick.addEventListener('click', function() {
   intImgWindow.style.display = 'block';
@@ -185,15 +185,43 @@ cancelBtn.addEventListener('click', function() {
 
 // add product Image
 
-// let prodImgPopup = document.querySelector('.new_prod_img');
-// prodImgPopup.addEventListener('click', function() {
-//   window.open('index_3.html','','width=520,height=550,left=500,top=100');
-// })
+let prodImgClick = document.querySelector('.new_prod_img');
+let prodImgWindow = document.querySelector('.prod_image_pop-up');
+let prodUploadBtn = document.querySelector('#prod-upload-btn');
+let prodCancelBtn = document.querySelector('#prod-cancel-btn');
+
+prodImgClick.addEventListener('click', function() {
+  prodImgWindow.style.display = 'block';
+  mainPage.classList.toggle('cover');
+});
+
+prodUploadBtn.addEventListener('click', function() {
+  prodImgWindow.style.display = 'none';
+  mainPage.classList.toggle('cover');
+});
+prodCancelBtn.addEventListener('click', function() {
+  prodImgWindow.style.display = 'none';
+  mainPage.classList.toggle('cover');
+})
 
 // add video/animation
 
 
-// let animVidPopup = document.querySelector('.new_anim');
-// animVidPopup.addEventListener('click', function() {
-//   window.open('index_4.html','','width=520,height=550,left=500,top=100');
-// })
+let animImgClick = document.querySelector('.new_anim');
+let animImgWindow = document.querySelector('.anim_image_pop-up');
+let animUploadBtn = document.querySelector('#anim-upload-btn');
+let animCancelBtn = document.querySelector('#anim-cancel-btn');
+
+animImgClick.addEventListener('click', function() {
+  animImgWindow.style.display = 'block';
+  mainPage.classList.toggle('cover');
+});
+
+animUploadBtn.addEventListener('click', function() {
+  animImgWindow.style.display = 'none';
+  mainPage.classList.toggle('cover');
+});
+animCancelBtn.addEventListener('click', function() {
+  animImgWindow.style.display = 'none';
+  mainPage.classList.toggle('cover');
+})
