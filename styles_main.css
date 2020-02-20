@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: black;
+  background-color: white;
   min-height: 50px;
   width: 100%;
   margin-left: auto;
@@ -38,7 +38,7 @@
 }
 
 .menu-item {
-  color: white;
+  color: black;
   font-family: MaisonNeue-Demi, sans-serif;
   text-decoration: none;
   font-size: 25px;
@@ -58,7 +58,7 @@
   margin-right: auto;
   height: 580px;
   width: auto;
-  background-image: url('maps/1a.jpg');
+  background-image: url('maps/gal5.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -69,14 +69,14 @@
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
-  color: grey;
+  color: white;
   font-family: MaisonNeue-Demi, sans-serif;
   font-size: 40px;
   text-align: center;
 }
 
 .hero-block p {
-  color: grey;
+  color: white;
   font-family: MaisonNeue-Demi, sans-serif;
   font-size: 25px;
   text-align: center;
